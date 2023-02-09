@@ -4,5 +4,11 @@ import styles from "./Cards.module.css";
 
 export default function Cards(props) {
   const { characters } = props;
-  return <div>{characters.map((character) => Card(character))}</div>;
+  return (
+    <div className={styles.characters}>
+      {characters.map((character) => (
+        <div>{Card(character)}</div>
+      ))}
+    </div>
+  );
 }
