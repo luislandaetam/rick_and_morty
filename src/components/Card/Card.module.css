@@ -1,43 +1,102 @@
-.character {
+.card {
   display: flex;
-  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all 0.3s;
 }
 
-.card {
-  background-color: #fff;
-  width: fit-content;
+.card2 {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  border: solid 1px #999;
+  width: fit-content;
+  height: fit-content;
+  background-color: #1a1a1a;
+  transition: all 0.2s;
+  position: relative;
 }
 
-.button {
-  background-color: #f00;
-  color: #fff;
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border: 0px solid transparent;
+  background-color: rgba(100, 77, 237, 0.08);
+  border-radius: 1.25em;
+  transition: all 0.2s linear;
   width: fit-content;
-  margin: 0.5rem;
-  border: 1px solid grey;
-  border-radius: 5px;
+  position: absolute;
+  left: 80%;
+}
+
+button:hover {
+  box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+    8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+    17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+    36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+    99px 72px 143px rgba(0, 0, 0, 0.08);
+}
+
+.tooltip {
   position: relative;
-  left: 85%;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 4em;
+  background-color: rgba(0, 0, 0, 0.253);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.image {
+  border-radius: 50%;
 }
 
 .name {
-  background-color: rgba(60, 60, 60, 0.5);
   color: #fff;
-  width: fit-content;
-  margin: 1rem;
-  transform: translateY(-4rem);
-  border-radius: 5px;
-  padding: 0.1rem;
 }
 
 .footer {
+  color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  transform: translateY(-2rem);
+  transform: translateY(-1rem);
 }
 
 .species {
