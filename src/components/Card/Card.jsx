@@ -5,7 +5,10 @@ export default function Card(props) {
   return (
     <div className={styles.card}>
       <div className={styles.card2}>
-        <button className={styles.tooltip} onClick={props.onClose}>
+        <button
+          className={`${styles.tooltip} ${styles.button}`}
+          onClick={props.onClose}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
