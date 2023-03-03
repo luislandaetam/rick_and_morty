@@ -7,7 +7,9 @@ export default function Card(props) {
       <div className={styles.card2}>
         <button
           className={`${styles.tooltip} ${styles.button}`}
-          onClick={props.onClose}
+          onClick={() => {
+            props.onClose(props.character.id);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,11 +27,15 @@ export default function Card(props) {
           </svg>
           <span className={styles.tooltiptext}>remove</span>
         </button>
-        <img src={props.image} alt={props.name} className={styles.image} />
-        <h2 className={styles.name}>{props.name}</h2>
+        <img
+          src={props.character.image}
+          alt={props.character.name}
+          className={styles.image}
+        />
+        <h2 className={styles.name}>{props.character.name}</h2>
         <section className={styles.footer}>
-          <h2 className={styles.species}>Specie: {props.species}</h2>
-          <h2 className={styles.gender}>Gender: {props.gender}</h2>
+          <h2 className={styles.species}>Specie: {props.character.species}</h2>
+          <h2 className={styles.gender}>Gender: {props.character.gender}</h2>
         </section>
       </div>
     </div>
